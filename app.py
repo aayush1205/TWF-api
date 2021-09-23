@@ -4,7 +4,7 @@ from flask import Flask, request, abort
 app = Flask(__name__)
 
 
-@app.route("/", methods=['GET'])
+@app.route("/", methods=['POST'])
 def solve():
     req = request.get_json()
     try:
