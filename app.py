@@ -1,10 +1,13 @@
 import os
 from flask import Flask, request, abort
+from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
+CORS(app, support_credentials=True)
 
 
 @app.route("/", methods=['GET', 'POST'])
+@cross_origin(supports_credentials=True)
 def solve():
     if request.method == 'GET':
         return "<h1>Welcome!</h1>"
